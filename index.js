@@ -3,6 +3,10 @@ const PORT = 8000;
 
 const app = express();
 
+app.route("/").get((req, res) => {
+  res.json({ status: "Pending" });
+});
+
 app
   .route("/login")
   .get((req, res) => {

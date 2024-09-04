@@ -1,0 +1,116 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey,
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremly sad
+      - so saad
+      - so sad
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+  - intent: asking_ticket
+    examples: |
+      - Can I buy tickets?
+      - Tickets please
+      - Give me ticket
+      - tickets please
+  - intent: Paying
+    examples: |
+      - payment
+      - how to pay?
+      - payment option please
+
+  - intent: no_of_ticket
+    examples: |
+      - Give me [2](no_of_tickets) tickets
+      - [4](no_of_tickets) tickets please
+      - [1](no_of_tickets)
+      - [5](no_of_tickets)
+      - [1](no_of_tickets) please
+entities:
+  - no_of_tickets
+slots:
+  no_of_tickets:
+    type: number
+    influence_conversation: false

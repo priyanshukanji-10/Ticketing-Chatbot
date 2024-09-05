@@ -1,41 +1,46 @@
 version: "3.1"
-
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - asking_ticket
-  - no_of_ticket
+  - inform
+  - ask_ticket_price
+  - book_ticket
+  - confirm
+  - cancel_ticket
+  - fallback
+
+entities:
+  - category
+  - time_slot
+  - quantity 
+
 
 responses:
   utter_greet:
-    - text: "Hey! How are you? Welcome to the museum"
-
-  utter_cheer_up:
-    - text: "Here is something to cheer you up:"
-      image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-    - text: "Did that help you?"
-
-  utter_happy:
-    - text: "Great, carry on!"
-
+    - text: "Hello! Welcome to the museum ticketing system. How can I assist you today?"
   utter_goodbye:
-    - text: "Bye"
+    - text: "Goodbye! Have a great day!"
+  
+  utter_ask_category:
+    - text: "Can you please specify your category? We have student, adult, foreigner, and specially-abled categories."
+  utter_ask_quantity:
+    - text: "How many tickets would you like to book?"
+  utter_ask_time_slot:
+    - text: "Choose your preferred time slot: Morning or Evening."
+  utter_confirm_booking:
+    - text: "You're booked a ticket "
 
-  utter_iamabot:
-    - text: "I am a bot, powered by Rasa."
-  utter_ticket:
-    - text: "Yes!! You can buy tickets here."
-  no_of_tickets:
-    - text: "Sure!.Generating tickets..."
-    - text: "Generating tickets..."
+  utter_booking_failed:
+    - text: "Sorry, I couldn't book the ticket. Please try again later."
+  utter_cancelation_confirmed:
+    - text: "Your ticket has been successfully canceled. Thank you!"
 
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+actions:
+  - action_book_ticket
+  - action_cancel_ticket
+  - utter_iamabot
+  - utter_booking_confirmed
+  - utter_ticket_price
+  - utter_ask_quantity
+  - utter_ask_time_slot
+  - utter_fallback

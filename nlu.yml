@@ -1,0 +1,62 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - Hello
+      - Hi
+      - Good morning
+      - Hey
+      - Greetings
+
+  - intent: goodbye
+    examples: |
+      - Goodbye
+      - See you later
+      - Have a nice day
+      - Bye
+      - Take care
+
+  - intent: inform
+    examples: |
+      - I want [student](category) tickets
+      - Book [3](quantity) tickets
+      - I prefer the [Morning](time_slot) slot
+      - I need [adult](category) tickets for [2](quantity)
+      - Choose [Evening](time_slot) slot
+      - Evening(time_slot)
+
+  - intent: ask_ticket_price
+    examples: |
+      - What is the price of a ticket?
+      - How much does a ticket cost?
+      - Can you tell me the ticket price?
+      - What are the ticket prices?
+
+  - intent: book_ticket
+    examples: |
+      - I want to book a ticket
+      - Can I reserve tickets?
+      - I’d like to purchase tickets
+      - Book tickets for me
+
+  - intent: confirm
+    examples: |
+      - Yes, that’s correct
+      - Confirm the booking
+      - Yes, that works
+      - That’s right
+
+  - intent: cancel_ticket
+    examples: |
+      - Cancel my ticket
+      - I want to cancel my reservation
+      - Please cancel my booking
+      - I need to cancel my ticket
+
+  - intent: fallback
+    examples: |
+      - I don’t understand
+      - Can you repeat that?
+      - I didn’t catch that
+      - What are you talking about?

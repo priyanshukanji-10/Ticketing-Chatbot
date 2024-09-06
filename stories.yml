@@ -1,0 +1,54 @@
+version: "3.1"
+
+stories:
+  - story: Greet and Book Ticket
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: book_ticket
+      - action: utter_ask_category
+      - intent: inform
+        entities:
+          - category: student
+      - action: utter_ask_quantity
+      - intent: inform
+        entities:
+          - quantity: 2
+      - action: utter_ask_time_slot
+      - intent: inform
+        entities:
+          - time_slot: Morning
+      - action: utter_confirm_booking
+
+  - story: Greet and Cancel Ticket
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: cancel_ticket
+      - action: utter_cancelation_confirmed
+
+  - story: Ask Ticket Price and Book
+    steps:
+      - intent: ask_ticket_price
+      - action: utter_ask_category
+      - intent: inform
+        entities:
+          - category: adult
+      - action: utter_ask_quantity
+      - intent: inform
+        entities:
+          - quantity: 1
+      - action: utter_ask_time_slot
+      - intent: inform
+        entities:
+          - time_slot: Evening 
+      - action: utter_confirm_booking
+       
+  - story: Confirm Booking
+    steps:
+      - intent: book_ticket
+      - action: utter_ask_category
+      - intent: inform
+        entities:
+          - category: student
+     
